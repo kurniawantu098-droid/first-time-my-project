@@ -1,312 +1,316 @@
-/* ===== VARIABEL GLOBAL ===== */
+/*
+ * =========================================
+ * FILE: styles.css
+ * Tema Desain: Minimalis & Ramah Cetak
+ * =========================================
+ */
+
+/* 1. RESET DAN BASE STYLES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
-  --bg: #f4f5fb;
-  --card: #ffffff;
-  --primary: #2563eb;
-  --primary-soft: #dbeafe;
-  --text-main: #0f172a;
-  --text-muted: #6b7280;
-  --border-soft: #e5e7eb;
-  --radius-lg: 24px;
-  --radius-md: 18px;
-  --radius-pill: 999px;
-  --shadow-main: 0 18px 45px rgba(15, 23, 42, 0.12);
-  --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.08);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+    /* Palet Warna */
+    --color-primary: #375a7f; /* Biru Tua/Navy */
+    --color-accent: #00bcd4;  /* Biru Muda/Cyan */
+    --color-text: #333333;
+    --color-background: #f4f7f6;
+    --color-card-bg: #ffffff;
+    --color-border: #e0e0e0;
+
+    /* Spasi */
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 40px;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* ===== BODY & BACKGROUND ===== */
 body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  color: var(--text-main);
-  background: var(--bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
 }
 
-/* Dekorasi halus */
+/* 2. LAYOUT UTAMA */
+
 .bg-decor {
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(248, 113, 113, 0.16), transparent 60%);
-  z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background-color: var(--color-primary);
+    z-index: 0;
+    opacity: 0.1; /* Latar belakang halus */
 }
 
-/* ===== APP WRAPPER ===== */
 .app {
-  width: 100%;
-  max-width: 880px;
-  background: rgba(255, 255, 255, 0.98);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-main);
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  overflow: hidden;
+    max-width: 900px;
+    margin: var(--space-xl) auto;
+    position: relative; /* Agar berada di atas bg-decor */
+    z-index: 1;
+    padding: var(--space-md);
 }
 
-/* ===== HEADER ===== */
+/* 3. HEADER DAN PROFIL */
+
 .app-header {
-  padding: 18px 22px 16px;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
-  background: linear-gradient(120deg, #eff6ff, #ffffff);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+    background-color: var(--color-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-lg);
 }
 
 .profile {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-lg);
 }
 
-/* Avatar kotak rounded */
 .avatar {
-  width: 96px;
-  height: 96px;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 2px solid #e0e7ff;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
-  background: radial-gradient(circle at top, #eef2ff, #ffffff);
-  flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--color-accent);
+    flex-shrink: 0;
 }
 
 .avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.profile-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-/* Badge kecil "Portofolio PPKn" */
 .pill {
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
-  background: rgba(37, 99, 235, 0.08);
-  color: #1e3a8a;
-  font-size: 11px;
-  font-weight: 600;
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 4px var(--space-sm);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
 }
 
-.pill::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: #22c55e;
-}
-
-/* Nama & kelas */
 .name {
-  margin: 0;
-  font-size: 20px;
-  letter-spacing: 0.01em;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin: 0 0 4px 0;
 }
 
 .class {
-  margin: 0;
-  font-size: 13px;
-  color: var(--text-muted);
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
 }
 
-/* Chip judul & topik */
+/* Chips (Detail Judul dan Topik) */
 .chips {
-  margin-top: 4px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
 }
 
 .chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  background: #f3f4ff;
-  border: 1px solid #e0e7ff;
-  font-size: 11px;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 4px 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    background-color: #f9f9f9;
 }
 
 .chip-label {
-  font-weight: 600;
-  color: #1d4ed8;
+    font-weight: 400;
+    color: #999;
 }
 
 .chip-value {
-  color: #1e293b;
+    font-weight: 600;
+    color: var(--color-text);
 }
 
-/* Tombol print kanan */
-.header-actions {
-  flex-shrink: 0;
-}
-
+/* Tombol Aksi Header */
 .btn-ghost {
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  background: rgba(255, 255, 255, 0.7);
-  padding: 6px 12px;
-  font-size: 11px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #0f172a;
-  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
-}
-
-.btn-ghost::before {
-  content: "🖨";
-  font-size: 12px;
+    background: none;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+    white-space: nowrap;
 }
 
 .btn-ghost:hover {
-  background: #f9fafb;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
-  transform: translateY(-1px);
+    background-color: var(--color-primary);
+    color: var(--color-card-bg);
 }
 
-/* ===== MAIN CONTENT ===== */
-.app-main {
-  padding: 18px 18px 20px;
-}
+/* 4. KONTEN UTAMA (MAIN) */
 
-/* Kartu utama */
 .card {
-  background: radial-gradient(circle at top left, #f3f4f6 0, #ffffff 65%);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-card);
-}
-
-.card-head {
-  padding: 10px 16px;
-  border-bottom: 1px solid #e5e7eb;
-  background: linear-gradient(90deg, rgba(239, 246, 255, 0.96), #ffffff);
+    background-color: var(--color-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
 }
 
 .card-head h2 {
-  margin: 0;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #64748b;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-lg);
 }
 
-.card-body {
-  padding: 12px 16px 16px;
-}
-
-/* Section dalam kartu */
 .section {
-  padding: 10px 0 12px;
-  border-bottom: 1px dashed #e5e7eb;
-}
-
-.section:last-of-type {
-  border-bottom: none;
+    margin-bottom: var(--space-xl);
 }
 
 .section-title {
-  margin: 0 0 6px;
-  font-size: 15px;
-  color: var(--primary);
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    position: relative;
+    padding-left: var(--space-md);
+}
+
+.section-title::before {
+    content: '•';
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
 }
 
 .text {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.7;
+    margin-bottom: var(--space-sm);
 }
 
-.lead {
-  color: var(--text-muted);
+.text.lead {
+    font-style: italic;
+    color: #555;
+    font-size: 1.05rem;
 }
 
-/* Kesimpulan diberi highlight */
+.text.small {
+    font-size: 0.9rem;
+}
+
+.text-subtitle { /* Digunakan untuk sub-judul dalam Pesan & Refleksi */
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-top: var(--space-md);
+    margin-bottom: 4px;
+}
+
+/* Untuk menonjolkan bagian Kesimpulan/Pesan */
 .section-highlight {
-  margin-top: 4px;
-  background: linear-gradient(180deg, #f9fafb, #ffffff);
-  border-radius: 12px;
-  padding: 10px 10px 12px;
-  border: 1px dashed #d1d5db;
+    background-color: #f0f8ff; /* Warna latar belakang ringan */
+    border-left: 5px solid var(--color-accent);
+    padding: var(--space-md);
+    border-radius: 0 8px 8px 0;
+}
+.section-highlight .section-title::before {
+    color: var(--color-primary); /* Ubah warna bullet di highlight */
 }
 
-.section-highlight .section-title {
-  color: #111827;
-}
+/* 5. FOOTER */
 
-.small {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-/* ===== FOOTER ===== */
 .app-footer {
-  padding: 10px 18px 14px;
-  border-top: 1px solid #e5e7eb;
-  background: #f9fafb;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+    text-align: center;
+    padding: var(--space-md) 0;
+    font-size: 0.8rem;
+    color: #999;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
 }
 
-.footer-text {
-  font-size: 12px;
-  color: var(--text-muted);
+/* 6. MEDIA QUERIES (Responsif & Cetak) */
+
+/* Tata letak untuk layar kecil */
+@media (max-width: 600px) {
+    .app-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-sm);
+        margin-bottom: var(--space-md);
+    }
+    .avatar {
+        width: 80px;
+        height: 80px;
+        margin-bottom: var(--space-sm);
+    }
+    .header-actions {
+        width: 100%;
+        margin-top: var(--space-md);
+    }
+    .btn-ghost {
+        width: 100%;
+    }
+    .app-footer {
+        flex-direction: column;
+        gap: 4px;
+    }
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 720px) {
-  body {
-    padding: 16px;
-  }
-
-  .app {
-    border-radius: 18px;
-  }
-
-  .app-header {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .profile {
-    justify-content: flex-start;
-  }
-
-  .header-actions {
-    align-self: flex-end;
-  }
-
-  .app-main {
-    padding: 14px 12px 16px;
-  }
-
-  .card-body {
-    padding: 10px 12px 14px;
-  }
+/* Pengaturan Cetak (Print) */
+@media print {
+    body {
+        background-color: white !important;
+        font-size: 11pt; /* Ukuran font yang lebih kecil untuk cetak */
+    }
+    .app {
+        margin: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+    .bg-decor,
+    .btn-ghost,
+    .header-actions {
+        display: none !important; /* Hilangkan semua elemen non-esensial saat cetak */
+    }
+    .app-header,
+    .card {
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: var(--space-lg);
+    }
+    .name {
+        font-size: 1.5rem;
+        color: black;
+    }
+    .card-head h2 {
+        border-bottom: 1px solid #ccc;
+    }
+    /* Pastikan warna teks terlihat pada kertas putih */
+    .section-highlight {
+        background-color: #eee !important; /* Warna abu-abu terang untuk highlight */
+        -webkit-print-color-adjust: exact; /* Memaksa browser mencetak warna latar */
+        print-color-adjust: exact;
+    }
 }
