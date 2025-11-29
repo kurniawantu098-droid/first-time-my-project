@@ -1,377 +1,312 @@
-/*
- * =========================================
- * FILE: styles.css
- * Tema Desain: Modern, Soft UI, & Ramah Cetak
- * Disesuaikan untuk Portofolio Hukum & HAM
- * =========================================
- */
-
 /* ===== VARIABEL GLOBAL ===== */
 :root {
-  --bg: #f4f5fb;
-  --card: #ffffff;
-  --primary: #2563eb; /* Biru Utama */
-  --primary-soft: #dbeafe;
-  --text-main: #0f172a;
-  --text-muted: #6b7280;
-  --border-soft: #e5e7eb;
-  --radius-lg: 24px;
-  --radius-md: 18px;
-  --radius-pill: 999px;
-  --shadow-main: 0 18px 45px rgba(15, 23, 42, 0.12);
-  --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.08);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  --bg: #f4f5fb;
+  --card: #ffffff;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --text-main: #0f172a;
+  --text-muted: #6b7280;
+  --border-soft: #e5e7eb;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-pill: 999px;
+  --shadow-main: 0 18px 45px rgba(15, 23, 42, 0.12);
+  --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.08);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* ===== BODY & BACKGROUND ===== */
 body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  color: var(--text-main);
-  background: var(--bg);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--text-main);
+  background: var(--bg);
 }
 
 /* Dekorasi halus */
 .bg-decor {
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(248, 113, 113, 0.16), transparent 60%);
-  z-index: -1;
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(248, 113, 113, 0.16), transparent 60%);
+  z-index: -1;
 }
 
 /* ===== APP WRAPPER ===== */
 .app {
-  width: 100%;
-  max-width: 880px;
-  background: rgba(255, 255, 255, 0.98);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-main);
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  overflow: hidden;
+  width: 100%;
+  max-width: 880px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-main);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  overflow: hidden;
 }
 
 /* ===== HEADER ===== */
 .app-header {
-  padding: 18px 22px 16px;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
-  background: linear-gradient(120deg, #eff6ff, #ffffff);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  padding: 18px 22px 16px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  background: linear-gradient(120deg, #eff6ff, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .profile {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 /* Avatar kotak rounded */
 .avatar {
-  width: 96px;
-  height: 96px;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 2px solid #e0e7ff;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
-  background: radial-gradient(circle at top, #eef2ff, #ffffff);
-  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 2px solid #e0e7ff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+  background: radial-gradient(circle at top, #eef2ff, #ffffff);
+  flex-shrink: 0;
 }
 
 .avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .profile-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 /* Badge kecil "Portofolio PPKn" */
 .pill {
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
-  background: rgba(37, 99, 235, 0.08);
-  color: #1e3a8a;
-  font-size: 11px;
-  font-weight: 600;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(37, 99, 235, 0.08);
+  color: #1e3a8a;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .pill::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: #22c55e;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #22c55e;
 }
 
 /* Nama & kelas */
 .name {
-  margin: 0;
-  font-size: 20px;
-  letter-spacing: 0.01em;
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0.01em;
 }
 
 .class {
-  margin: 0;
-  font-size: 13px;
-  color: var(--text-muted);
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
 /* Chip judul & topik */
 .chips {
-  margin-top: 4px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  background: #f3f4ff;
-  border: 1px solid #e0e7ff;
-  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: #f3f4ff;
+  border: 1px solid #e0e7ff;
+  font-size: 11px;
 }
 
 .chip-label {
-  font-weight: 600;
-  color: #1d4ed8;
+  font-weight: 600;
+  color: #1d4ed8;
 }
 
 .chip-value {
-  color: #1e293b;
+  color: #1e293b;
 }
 
 /* Tombol print kanan */
 .header-actions {
-  flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .btn-ghost {
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  background: rgba(255, 255, 255, 0.7);
-  padding: 6px 12px;
-  font-size: 11px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #0f172a;
-  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 6px 12px;
+  font-size: 11px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0f172a;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
 }
 
 .btn-ghost::before {
-  content: "🖨";
-  font-size: 12px;
+  content: "🖨";
+  font-size: 12px;
 }
 
 .btn-ghost:hover {
-  background: #f9fafb;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
-  transform: translateY(-1px);
+  background: #f9fafb;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+  transform: translateY(-1px);
 }
 
 /* ===== MAIN CONTENT ===== */
 .app-main {
-  padding: 18px 18px 20px;
+  padding: 18px 18px 20px;
 }
 
 /* Kartu utama */
 .card {
-  background: radial-gradient(circle at top left, #f3f4f6 0, #ffffff 65%);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-card);
+  background: radial-gradient(circle at top left, #f3f4f6 0, #ffffff 65%);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-card);
 }
 
 .card-head {
-  padding: 10px 16px;
-  border-bottom: 1px solid #e5e7eb;
-  background: linear-gradient(90deg, rgba(239, 246, 255, 0.96), #ffffff);
+  padding: 10px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(90deg, rgba(239, 246, 255, 0.96), #ffffff);
 }
 
 .card-head h2 {
-  margin: 0;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #64748b;
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
 }
 
 .card-body {
-  padding: 12px 16px 16px;
+  padding: 12px 16px 16px;
 }
 
 /* Section dalam kartu */
 .section {
-  padding: 10px 0 12px;
-  border-bottom: 1px dashed #e5e7eb;
+  padding: 10px 0 12px;
+  border-bottom: 1px dashed #e5e7eb;
 }
 
 .section:last-of-type {
-  border-bottom: none;
+  border-bottom: none;
 }
 
 .section-title {
-  margin: 0 0 6px;
-  font-size: 15px;
-  color: var(--primary);
+  margin: 0 0 6px;
+  font-size: 15px;
+  color: var(--primary);
 }
 
 .text {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.7;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .lead {
-  color: var(--text-muted);
-}
-
-/* KELAS BARU UNTUK SUB-JUDUL DI BAGIAN PESAN/REFLEKSI */
-.text-subtitle {
-  font-weight: 700;
-  font-size: 14px;
-  color: #374151; /* Sedikit lebih gelap dari text-muted */
-  margin-top: 10px;
-  margin-bottom: 4px;
+  color: var(--text-muted);
 }
 
 /* Kesimpulan diberi highlight */
 .section-highlight {
-  margin-top: 4px;
-  background: linear-gradient(180deg, #f9fafb, #ffffff);
-  border-radius: 12px;
-  padding: 10px 10px 12px;
-  border: 1px dashed #d1d5db;
+  margin-top: 4px;
+  background: linear-gradient(180deg, #f9fafb, #ffffff);
+  border-radius: 12px;
+  padding: 10px 10px 12px;
+  border: 1px dashed #d1d5db;
 }
 
 .section-highlight .section-title {
-  color: #111827;
+  color: #111827;
 }
 
 .small {
-  font-size: 13px;
-  color: var(--text-muted);
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
 /* ===== FOOTER ===== */
 .app-footer {
-  padding: 10px 18px 14px;
-  border-top: 1px solid #e5e7eb;
-  background: #f9fafb;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  padding: 10px 18px 14px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .footer-text {
-  font-size: 12px;
-  color: var(--text-muted);
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
-/* ===== RESPONSIVE & PRINT ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 720px) {
-  body {
-    padding: 16px;
-  }
+  body {
+    padding: 16px;
+  }
 
-  .app {
-    border-radius: 18px;
-  }
+  .app {
+    border-radius: 18px;
+  }
 
-  .app-header {
-    flex-direction: column;
-    align-items: stretch;
-  }
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-  .profile {
-    justify-content: flex-start;
-  }
+  .profile {
+    justify-content: flex-start;
+  }
 
-  .header-actions {
-    align-self: flex-end;
-  }
+  .header-actions {
+    align-self: flex-end;
+  }
 
-  .app-main {
-    padding: 14px 12px 16px;
-  }
+  .app-main {
+    padding: 14px 12px 16px;
+  }
 
-  .card-body {
-    padding: 10px 12px 14px;
-  }
-}
-
-/* Print Styles */
-@media print {
-    body {
-        background-color: #fff !important;
-        padding: 0;
-    }
-    .app {
-        max-width: 100%;
-        margin: 0;
-        border: none;
-        box-shadow: none;
-        border-radius: 0;
-    }
-    .bg-decor,
-    .btn-ghost {
-        display: none !important;
-    }
-    .app-header {
-        background: #f9fafb !important;
-        border-bottom: 2px solid #ccc !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-    .profile-text {
-        color: #000;
-    }
-    .name {
-        color: #000 !important;
-        font-size: 18px;
-    }
-    .pill, .chip {
-        background: #eee !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        border: 1px solid #ddd !important;
-    }
-    .section-highlight {
-        background: #f0f0f0 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-        border: 1px solid #ccc !important;
-    }
-    .section-title {
-        color: #000 !important;
-    }
-}
+  .card-body {
+    padding: 10px 12px 14px;
+  }
 }
